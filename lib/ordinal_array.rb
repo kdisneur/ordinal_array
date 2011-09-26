@@ -1,5 +1,5 @@
-require_relative './ordinal_number/ordinal'
-require_relative './ordinal_number/ordinal_constants'
+require_relative './ordinal_array/ordinal'
+require_relative './ordinal_array/ordinal_constants'
 
 class Array
 
