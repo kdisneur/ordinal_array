@@ -6,12 +6,12 @@ class Array
   include OrdinalArray::Constant
   include OrdinalArray
 
-	def method_missing name, *params
+  def method_missing name, *params
     if number_in_letter? name
-			value_by_number_in_letter name, params
-		else
-			super
-  	end
+      value_by_number_in_letter name, params
+    else
+      super
+    end
   end
 
   private
@@ -28,23 +28,23 @@ class Array
       ordinal_figure = !figure.kind_of?(ComposedOrdinal)
       true
     end.empty? && ordinal_figure
-	end
+  end
 
-	def value_by_number_in_letter name, *params
-	  partial_sum = 1
-		sum = name.to_s.split('_').inject(0) do |sum, letter_number|
-		  number = Numbers_in_letter.element_by_name(letter_number).number
-		  if partial_sum < number
-		    partial_sum = partial_sum * number
-		  else
-		    sum = sum + partial_sum
-		    partial_sum = number
-      end
+  def value_by_number_in_letter name, *params
+    partial_sum = 1
+    sum = name.to_s.split('_').inject(0) do |sum, letter_number|
+    number = Numbers_in_letter.element_by_name(letter_number).number
+    if partial_sum < number
+      partial_sum = partial_sum * number
+    else
+      sum = sum + partial_sum
+      partial_sum = number
+    end
       sum
     end
     sum = sum + partial_sum
     index = sum - 1
-		self.[] index  if index > 0
-	end
+    self.[] index  if index > 0
+  end
 end
 

@@ -60,25 +60,25 @@ module OrdinalArray
     Hundredth = HundredOrdinal.new "hundredth", 100
     Hundred = ComposedHundredOrdinal.new "hundred", 100
 
-  	Numbers_in_letter = [
-  	  One, Two, Three, Four, Five, Six, Seven, Eight, Nine,
-  	  Ten, Eleven, Twelve, Thirteen, Fourteen, Fifteen, Sixteen, Seventeen, Eighteen, Nineteen,
-  	  Twenty, Thirty, Fourty, Fifty, Sixty, Seventy, Eighty, Ninety,
-  	  Hundred,
+    Numbers_in_letter = [
+      One, Two, Three, Four, Five, Six, Seven, Eight, Nine,
+      Ten, Eleven, Twelve, Thirteen, Fourteen, Fifteen, Sixteen, Seventeen, Eighteen, Nineteen,
+      Twenty, Thirty, Fourty, Fifty, Sixty, Seventy, Eighty, Ninety,
+      Hundred,
 
-  	  First, Second, Third, Fourth, Fifth, Sixth, Seventh, Eighth, Ninth,
-  	  Tenth, Eleventh, Twelfth, Thirteenth, Fourteenth, Fifteenth, Sixteenth, Seventeenth, Eighteenth, Nineteenth,
-  	  Twentieth, Thirtieth, Fortieth, Fiftieth, Sixtieth, Seventieth, Eightieth, Ninetieth,
-  	  Hundredth
-  	]
+      First, Second, Third, Fourth, Fifth, Sixth, Seventh, Eighth, Ninth,
+      Tenth, Eleventh, Twelfth, Thirteenth, Fourteenth, Fifteenth, Sixteenth, Seventeenth, Eighteenth, Nineteenth,
+      Twentieth, Thirtieth, Fortieth, Fiftieth, Sixtieth, Seventieth, Eightieth, Ninetieth,
+      Hundredth
+    ]
 
-  	class << Numbers_in_letter
-  	  def element_by_name name
-  	    index = self.index {|n| n.number_in_letter == name }
-  	    return nil if index.nil?
-  	    self.[] index
-  	  end
-  	end
+    class << Numbers_in_letter
+      def element_by_name name
+        index = self.index {|n| n.number_in_letter == name }
+        return nil if index.nil?
+        self.[] index
+      end
+    end
 
   end
 end
