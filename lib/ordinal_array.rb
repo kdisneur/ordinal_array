@@ -20,7 +20,7 @@ class Array
     ordinal_figure = false
     possible_followers = [:hundred, :decade, :ordinal]
     name.to_s.split('_').drop_while do |letter_number|
-		  return false if ordinal_figure
+      return false if ordinal_figure
       figure = Numbers_in_letter.element_by_name letter_number
       return false if figure.nil?
       return false unless possible_followers.include? figure.to_sym
