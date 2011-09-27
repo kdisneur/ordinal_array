@@ -11,10 +11,10 @@ It provides you some methods on the basic array class
 
 Exemple of use:
 
-my_array = ["value1", "value2", "value3"]
-puts my_array.third # print: value 3
-my_array[41] = "it works fine"
-puts my_array.fourty_second # print: it works fine
+ my_array = ["value1", "value2", "value3"]
+ puts my_array.third # print: value 3
+ my_array[41] = "it works fine"
+ puts my_array.fourty_second # print: it works fine
 
 = Contributors
 
