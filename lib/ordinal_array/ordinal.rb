@@ -17,7 +17,7 @@ module OrdinalArray
   class ComposedOrdinal < Ordinal
     def initialize number_in_letter, number
       super number_in_letter, number
-      @can_be_followed_by = [:hundred, :decade]
+      @can_be_followed_by = [:hundred]
     end
 
     def to_sym
