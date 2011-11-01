@@ -6,8 +6,13 @@ class Array
   include OrdinalArray::Constant
   include OrdinalArray
 
+  def self.respond_to? method_sym, include_private = false
+    return true if Array.number_in_letter? method_sym.to_s
+    super
+  end
+
   def method_missing name, *params
-    if number_in_letter? name
+    if Array.number_in_letter? name
       value_by_number_in_letter name, params
     else
       super
@@ -16,7 +21,7 @@ class Array
 
   private
 
-  def number_in_letter? name
+  def self.number_in_letter? name
     ordinal_figure = false
     possible_followers = [:hundred, :decade, :ordinal]
     name.to_s.split('_').drop_while do |letter_number|
