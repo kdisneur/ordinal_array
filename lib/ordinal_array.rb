@@ -7,7 +7,7 @@ class Array
   include OrdinalArray
 
   def self.respond_to? method_sym, include_private = false
-    return true if Array.number_in_letter? method_sym.to_s
+    return true if Array.number_in_letter? method_sym
     super
   end
 
