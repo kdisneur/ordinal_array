@@ -3,10 +3,10 @@ module OrdinalArray
   class Ordinal
     attr_accessor :number_in_letter, :number, :can_be_followed_by
 
-    def initialize number_in_letter, number
-      @number_in_letter = number_in_letter
-      @number = number
+    def initialize(number_in_letter, number)
+      @number_in_letter   = number_in_letter
       @can_be_followed_by = nil
+      @number = number
     end
 
     def to_sym
@@ -15,8 +15,8 @@ module OrdinalArray
   end
 
   class ComposedOrdinal < Ordinal
-    def initialize number_in_letter, number
-      super number_in_letter, number
+    def initialize(number_in_letter, number)
+      super(number_in_letter, number)
       @can_be_followed_by = [:hundred]
     end
 
@@ -26,8 +26,8 @@ module OrdinalArray
   end
 
   class DecadeOrdinal < Ordinal
-    def initialize number_in_letter, number
-      super number_in_letter, number
+    def initialize(number_in_letter, number)
+      super(number_in_letter, number)
       @can_be_followed_by = nil
     end
 
@@ -37,8 +37,8 @@ module OrdinalArray
   end
 
   class ComposedDecadeOrdinal < ComposedOrdinal
-    def initialize number_in_letter, number
-      super number_in_letter, number
+    def initialize(number_in_letter, number)
+      super(number_in_letter, number)
       @can_be_followed_by = [:ordinal]
     end
 
@@ -48,8 +48,8 @@ module OrdinalArray
   end
 
   class HundredOrdinal < Ordinal
-    def initialize number_in_letter, number
-      super number_in_letter, number
+    def initialize(number_in_letter, number)
+      super(number_in_letter, number)
       @can_be_followed_by = nil
     end
 
@@ -59,8 +59,8 @@ module OrdinalArray
   end
 
   class ComposedHundredOrdinal < ComposedDecadeOrdinal
-    def initialize number_in_letter, number
-      super number_in_letter, number
+    def initialize(number_in_letter, number)
+      super(number_in_letter, number)
       @can_be_followed_by = [:decade, :ordinal]
     end
 
@@ -69,4 +69,3 @@ module OrdinalArray
     end
   end
 end
-
