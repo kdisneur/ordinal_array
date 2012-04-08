@@ -4,6 +4,13 @@ Ordinal array is a Gem which allows you to access to a value of an array by an o
 
 Works with Ruby 1.9
 
+Improve ordinal array speed for multiple calls on the same method on the same array: (Benchmark results: https://gist.github.com/2337544)
+
+Exemple:
+  my_array = ["value1", "value2", "value3"]
+  puts my_array.third # print: value 3
+  puts my_array.third # print: value 3 (But... much faster!)
+
 = How to use
 
 Just add gem "ordinal_array" in your gemfile.
