@@ -1,5 +1,7 @@
 = Ordinal array
 
+{<img src="https://codeclimate.com/badge.png" />}[https://codeclimate.com/github/kdisneur/ordinal_array]
+
 Ordinal array is a Gem which allows you to access to a value of an array by an ordinal value. You can access to the first element of an array by the "first" method. Now you can access to the second element by "second", the third by "third" and that until the 999th elements.
 
 Works with Ruby 1.9
